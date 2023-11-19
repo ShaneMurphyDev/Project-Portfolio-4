@@ -15,7 +15,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                    src="https://res.cloudinary.com/ddxhh6kxr/image/upload/v1692608396/sample.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}">
                                 {% endif %}
@@ -28,16 +28,17 @@
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="fa-regular fa-star"></i>
+                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
-                </div>
-                <div class="row">
+            </div>
+            <div class="row">
                 {% endif %}
                 {% endfor %}
+
             </div>
         </div>
     </div>
@@ -53,6 +54,6 @@
             {% endif %}
         </ul>
     </nav>
+    {% endif %}
 </div>
-
 {%endblock%}
