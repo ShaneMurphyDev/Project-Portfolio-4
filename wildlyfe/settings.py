@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-shanemurphy-projectport-64jj0b791x6.ws-eu106.gitpod.io',
-'wildlyfe.herokuapp.com', 'localhost']
+'wildlyfe.herokuapp.com', 'localhost', 'natureblog-2089d93a8eb1.herokuapp.com']
 
 
 # Application definition
