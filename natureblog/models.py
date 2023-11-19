@@ -17,3 +17,5 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blogpost_like', blank=True)
 
+        class Meta:
+        ordering = ["-created_on"]
