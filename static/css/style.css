@@ -9,8 +9,8 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
+.green-i {
+    color: #77bfa3;
 }
 
 .thin {
@@ -43,7 +43,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #a4243b;
 }
 
 .author {
@@ -93,7 +93,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #bfd8bd;
+    color: #77bfa3;
 }
 
 .post-title {
@@ -107,18 +107,18 @@ body {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: #a4243b;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color:#a4243b;
 }
 
 .link {
-    color: #23BBBB;
+    color: #a4243b;
     text-decoration: none;
 }
 
