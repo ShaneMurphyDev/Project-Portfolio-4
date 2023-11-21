@@ -76,27 +76,3 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-def subscribe(request):
-    if request.method == 'POST':
-        form = SubscriptionForm(request.POST)
-        if form.is_valid():
-            subscription = form.save()
-
-            # Send a confirmation email
-            subject = 'Subscription to Wildlyfe'
-            message =  (
-                "Thank you for subscribing to our newsletter,"
-                + "you will get updates any new blog posts!"
-                + "Go back https://natureblog-2089d93a8eb1.herokuapp.com/"
-            )
-            from_email = settings.DEFAULT_FROM_EMAIL
-            recipient_list = [subscription.email]
-
-            send_mail(subject, message, from_email, recipient_list)
-
-            return render(request, 'subscription/success.html')
-    else:
-        form = SubscriptionForm()
-
-    return render(request, 'subscription/subscribe.html', {'form': form})
