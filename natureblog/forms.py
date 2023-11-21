@@ -1,5 +1,4 @@
 from .models import Comment
-from .models import Subscription
 from django import forms
 
 

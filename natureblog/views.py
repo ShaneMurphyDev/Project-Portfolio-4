@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from .models import Post
-from .forms import CommentForm, SubscriptionForm
+from .forms import CommentForm
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
