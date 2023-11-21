@@ -4,13 +4,18 @@ body {
 
 .brand {
     font-family: Lato, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #4A4A4F;
+    text-align: center;
 }
 
-.green-i {
-    color: #77bfa3;
+a {
+    text-align: center;
+}
+
+#navbarText {
+    text-align: center;
 }
 
 .thin {
