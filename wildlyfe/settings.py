@@ -170,3 +170,4 @@ EMAIL_HOST_USER = 'wildlyfeblog@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
