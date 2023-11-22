@@ -13,6 +13,10 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 
+class IndexView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'base.html')
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -75,7 +79,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     template_name = 'post_form.html'
-    login_url = 'account/login.html'
+    login_url = '/templates/account/login.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -85,13 +89,13 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'post_form.html'
-    login_url = 'account/login.html'
+    login_url = '/templates/account/login.html'
 
 class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'post_confirm_delete.html'
     success_url = reverse_lazy('index.html')
-    login_url = 'account/login.html'
+    login_url = '/templates/account/login.html'
 
 class PostLike(View):
     

@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+
+{% block content %}
 
 {% load crispy_forms_tags %}
 
@@ -114,7 +116,8 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
-
+                
+                {% endif %}
                 {% endif %}
                 {% endif %}
 
@@ -122,5 +125,4 @@
         </div>
     </div>
 </div>
-
 {% endblock content %}
