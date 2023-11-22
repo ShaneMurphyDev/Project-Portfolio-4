@@ -6,6 +6,8 @@ from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
+from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
@@ -73,7 +75,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     template_name = 'post_form.html'
-    login_url = 'templates/account/login.html'
+    login_url = 'account/login.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -83,7 +85,13 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'post_form.html'
-    login_url = 'templates/account/login.html'
+    login_url = 'account/login.html'
+
+class PostDelete(LoginRequiredMixin, DeleteView):
+    model = Post
+    template_name = 'post_confirm_delete.html'
+    success_url = reverse_lazy('index.html')
+    login_url = 'account/login.html'
 
 class PostLike(View):
     
