@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'natureblog',
+    'emailsub',
 ]
 
 SITE_ID = 1
@@ -158,10 +159,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DEFAULT_FROM_EMAIL = 'wildlyfeblog@gmail.com'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.Emailbackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'wildlyfeblog@gmail.com'

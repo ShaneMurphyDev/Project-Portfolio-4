@@ -3,6 +3,7 @@ from .forms import SubscriptionForm
 from django.core.mail import send_mail
 from django.conf import settings
 
+
 def subscribe(request):
     if request.method == 'POST':
         form = SubscriptionForm(request.POST)
@@ -11,11 +12,11 @@ def subscribe(request):
 
             # Send a confirmation email
             subject = 'Subscription Confirmation'
-            message = 'Thank you for subscribing!'
+            message = 'Thank you for subscribing to the Wildlyfe newsletter!'
             from_email = settings.DEFAULT_FROM_EMAIL
             recipient_list = [subscription.email]
 
-            send_mail(subject, message, from_email, recipient_list)
+            send_mail(subject, message, from_email, recipient_list, fail_silently=True)
 
             return render(request, 'subscription/success.html')
     else:
