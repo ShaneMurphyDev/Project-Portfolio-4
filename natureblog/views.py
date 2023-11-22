@@ -68,6 +68,15 @@ class PostDetail(View):
             },
         )
 
+class PostCreate(LoginRequiredMixin, CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'post_form.html'
+    login_url = 'templates/account/login.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 class PostLike(View):
     
