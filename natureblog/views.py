@@ -15,7 +15,7 @@ from django.conf import settings
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'base.html')
+        return render(request, 'index.html')
 
 class PostList(generic.ListView):
     model = Post
@@ -75,20 +75,11 @@ class PostDetail(View):
             },
         )
 
-class PostCreate(LoginRequiredMixin, CreateView):
-    model = Post
-    form_class = PostForm
-    template_name = 'post_form.html'
-    login_url = '/templates/account/login.html'
-
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
-
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostForm
     template_name = 'post_form.html'
+    success_url = reverse_lazy('index.html')
     login_url = '/templates/account/login.html'
 
 class PostDelete(LoginRequiredMixin, DeleteView):
