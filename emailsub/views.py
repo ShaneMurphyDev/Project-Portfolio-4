@@ -12,7 +12,11 @@ def subscribe(request):
 
             # Send a confirmation email
             subject = 'Subscription Confirmation'
-            message = 'Thank you for subscribing to the Wildlyfe newsletter!'
+            message = (
+                "Thank you for subscribing to our newsletter,"
+                + "you will get updates for our future adventures!"
+                + "Return to website: https://natureblog-2089d93a8eb1.herokuapp.com/"
+            )
             from_email = settings.EMAIL_HOST_USER
             recipient_list = [subscription.email]
 
