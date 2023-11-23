@@ -16,7 +16,7 @@ def subscribe(request):
             from_email = settings.EMAIL_HOST_USER
             recipient_list = [subscription.email]
 
-            send_mail(subject, message, from_email, recipient_list, fail_silently=True)
+            send_mail(subject, message, from_email, recipient_list, fail_silently=False)
 
             return render(request, 'subscription/success.html')
     else:
