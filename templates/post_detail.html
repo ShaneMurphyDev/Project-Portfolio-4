@@ -37,7 +37,11 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
-                    {{ post.content | safe }}
+                    {% if user.is_authenticated or post.author == None %}
+                        {{ post.content | safe }}
+                    {% else %}
+                        <p>This content is only visible to the author. Sign in to view.</p>
+                    {% endif %}
                 </p>
                 <div class="row">
 

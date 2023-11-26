@@ -4,9 +4,7 @@ from .models import Post
 from .forms import PostForm
 from .forms import CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView
-from django.views.generic.edit import UpdateView
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
@@ -23,6 +21,17 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 6
 
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'create_post.html', {'form': form})
 
 class PostDetail(View):
 
