@@ -1,6 +1,3 @@
-* {
-    text-align: center;
-}
 body {
     background-color: #F9FAFC;
 }
@@ -22,7 +19,7 @@ body {
 }
 
 .dark-bg {
-    background-color:  #a4243b;
+    background-color:  #56876d;
 }
 
 .main-bg {
@@ -43,7 +40,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #a4243b;
+    background-color: #56876d;
 }
 
 .author {
@@ -93,7 +90,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #77bfa3;
+    color: #56876d;
 }
 
 .post-title {
@@ -107,18 +104,18 @@ body {
 }
 
 .btn-signup {
-    background-color: #a4243b;
+    background-color: #56876d;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color:#a4243b;
+    color:#386641;
 }
 
 .link {
-    color: #a4243b;
+    color: #56876d;
     text-decoration: none;
 }
 
@@ -136,7 +133,7 @@ body {
 
 .btn-like:hover,
 .btn-like:active {
-    color: #bfd8bd;
+    color: red;
     background: transparent;
     border: none;
 }
