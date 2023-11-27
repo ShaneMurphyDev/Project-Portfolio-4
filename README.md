@@ -1,39 +1,55 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Wildlyfe Blog</h1>
 
-Welcome,
+[View the live project here.]()
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Wildlyfe is a blog application I have created to share, discuss, and engage with other wildlife enthusiasts that I have built using the Django Full Stack framework for my Portfolio Project 4
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+![alt text](image.jpg)
 
-## Codeanywhere Reminders
+## Design & Planning:
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+### User Stories
 
-`python3 -m http.server`
+ - #### First Time Visitor Goals
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+        - As a First Time Visitor, I want to easily understand the main purpose of the site.
+        - As a First Time Visitor, I want to be able to easily navigate throughout the site to find content.
+        - As a First Time Visitor, I want to be able to create an account.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+- #### Returning Visitor Goals
 
-`http_server`
+        - As a Returning Visitor, I want to be able to log in/out.
+        - As a Returning Visitor, I want to be able to see new posts.
+        - As a Returning Visitor, I want to  be able to engage with others in a meaningful way.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- #### Frequent User Goals
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+        - As a Frequent User, I want to be kept up to date with a newsletter.
+        - As a Frequent User, I want to take part in discussions and leave comments.
+        - As a Frequent User, I want to be able to make my own posts.
 
-To log into the Heroku toolbelt CLI:
+### Design
+-   #### Colour Scheme
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+        -   The two main colours used are
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+-   #### Typography
+        -   The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate.
 
----
+-   #### Imagery
+        -   Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
 
-Happy coding!
+### Wireframes
+<details>
+<summary>Click here to view</summary>
+<br>
+
+![alt text](image.jpg)
+
+![alt text](image.jpg)
+
+![alt text](image.jpg)
+
+</details>
+
