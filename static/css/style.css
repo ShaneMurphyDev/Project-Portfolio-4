@@ -127,7 +127,7 @@ body {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color:#386641;
+    color: #56876d;
 }
 
 .link {
@@ -142,7 +142,7 @@ body {
 }
 
 .btn-like {
-    color: #bfd8bd;
+    color: red;
     border: none;
     background: transparent;
 }

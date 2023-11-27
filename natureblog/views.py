@@ -111,3 +111,7 @@ class PostLike(View):
 class AboutView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'about.html')
+
+# Views for custom error pages
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
