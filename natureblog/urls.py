@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import create_post, AboutView
+from .views import create_post, AboutView, custom_404
 
 urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
