@@ -90,6 +90,10 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     template_name = 'post_form.html'
     success_url = reverse_lazy('index.html')
     login_url = '/templates/account/login.html'
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
+
 
 class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
