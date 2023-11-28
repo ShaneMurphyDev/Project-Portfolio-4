@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Confirm Deletion</h2>
-  <p>Are you sure you want to delete "{{ object.title }}"?</p>
-  <form method="post">
-    {% csrf_token %}
-    <button type="submit">Confirm Delete</button>
-  </form>
-  <a href="{% url 'post_detail' slug=object.slug %}">Cancel</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h2>Confirm Deletion</h2>
+      <p>Are you sure you want to delete "{{ object.title }}"?</p>
+      <form method="post">
+        {% csrf_token %}
+        <button class="btn btn-signup right" type="submit">Confirm Delete</button>
+      </form>
+      <a href="{% url 'post_detail' slug=object.slug %}">Cancel</a>
+    </div>
+  </div>
+</div>
 {% endblock %}
