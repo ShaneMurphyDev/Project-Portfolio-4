@@ -18,10 +18,6 @@ body {
     font-size: medium;
 }
 
-h1 {
-    text-align: center;
-}
-
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.8rem;
@@ -101,10 +97,6 @@ h1 {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
-}
-
-.post-form {
-    justify-content: center;
 }
 
 .post-link {

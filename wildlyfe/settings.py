@@ -30,6 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = ['8000-shanemurphy-projectport-6itq35yysau.ws-eu106.gitpod.io',
 'wildlyfe.herokuapp.com', 'localhost', 'natureblog-2089d93a8eb1.herokuapp.com']
 
