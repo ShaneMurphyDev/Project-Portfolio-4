@@ -17,6 +17,7 @@
                   <a href="{% url 'post_edit' slug=post.slug %}" class="btn btn-primary">Edit</a>
                   <a href="{% url 'post_delete' slug=post.slug %}" class="btn btn-danger">Delete</a>
                 </div>
+                {% endif %}
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
@@ -122,8 +123,6 @@
                 
                 {% endif %}
                 {% endif %}
-                {% endif %}
-
             </div>
         </div>
     </div>

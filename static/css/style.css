@@ -18,6 +18,10 @@ body {
     font-size: medium;
 }
 
+h1 {
+    text-align: center;
+}
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.8rem;
@@ -35,7 +39,7 @@ body {
 }
 
 .dark-bg {
-    background-color:  #56876d;
+    background-color: #56876d;
 }
 
 .main-bg {
@@ -97,6 +101,10 @@ body {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
+}
+
+.post-form {
+    justify-content: center;
 }
 
 .post-link {
