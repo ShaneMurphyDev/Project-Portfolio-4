@@ -10,10 +10,12 @@ from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
 
+
 # basic index view for urls
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html')
+
 
 # post display and pagination
 class PostList(generic.ListView):
@@ -21,6 +23,7 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
 
 # create a post logic
 def create_post(request):
@@ -35,6 +38,7 @@ def create_post(request):
         form = PostForm()
     return render(request, 'create_post.html', {'form': form})
 
+
 # detailed view of posts
 class PostDetail(View):
 
@@ -43,7 +47,8 @@ class PostDetail(View):
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
-        if post.likes.filter(id=self.request.user.id).exists(): liked = True
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
 
         return render(
             request,
@@ -87,6 +92,7 @@ class PostDetail(View):
             },
         )
 
+
 # post update logic
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
@@ -94,6 +100,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     template_name = 'post_form.html'
     success_url = reverse_lazy('index.html')
     login_url = '/templates/account/login.html'
+
     def form_valid(self, form):
         form.instance.created_by = self.request.user
         return super().form_valid(form)
@@ -106,9 +113,10 @@ class PostDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('index.html')
     login_url = '/templates/account/login.html'
 
+
 # liking post counter and display
 class PostLike(View):
-    
+
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -118,9 +126,11 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 class AboutView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'about.html')
+
 
 # Views for custom error pages
 def custom_404(request, exception):

@@ -6,6 +6,7 @@ from django.utils.text import slugify
 # Option to set post as draft or published
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 # main post model
 class Post(models.Model):
     title = models.CharField(max_length=50, unique=True)
@@ -32,6 +33,7 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+
 
 # main comment model
 class Comment(models.Model):
