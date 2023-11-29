@@ -1,6 +1,6 @@
 <h1 align="center">Wildlyfe Blog</h1>
 
-[View the live project here.]()
+[View the live project here.](https://natureblog-2089d93a8eb1.herokuapp.com/)
 
 Wildlyfe is a blog application I have created to share, discuss, and engage with other wildlife enthusiasts that I have built using the Django Full Stack framework for my Portfolio Project 4
 
