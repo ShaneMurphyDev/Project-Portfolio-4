@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
-
+#  Admin Post register
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
@@ -12,7 +12,7 @@ class PostAdmin(SummernoteModelAdmin):
     list_filter = ('status', 'created_on')
     summernote_fields = ('content')
 
-
+# Admin Comment register
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
 

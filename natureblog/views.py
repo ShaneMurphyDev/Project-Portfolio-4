@@ -10,17 +10,19 @@ from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
 
-
+# basic index view for urls
 class IndexView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html')
 
+# post display and pagination
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
 
+# create a post logic
 def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -33,6 +35,7 @@ def create_post(request):
         form = PostForm()
     return render(request, 'create_post.html', {'form': form})
 
+# detailed view of posts
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -84,6 +87,7 @@ class PostDetail(View):
             },
         )
 
+# post update logic
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostForm
@@ -95,12 +99,14 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
+# deleting posts logic
 class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'post_confirm_delete.html'
     success_url = reverse_lazy('index.html')
     login_url = '/templates/account/login.html'
 
+# liking post counter and display
 class PostLike(View):
     
     def post(self, request, slug, *args, **kwargs):

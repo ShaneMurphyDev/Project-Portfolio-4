@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from wildlyfe.settings import EMAIL_HOST_USER
 
+# subscription view
 def subscribe(request):
     if request.method == 'POST':
         form = SubscriptionForm(request.POST)

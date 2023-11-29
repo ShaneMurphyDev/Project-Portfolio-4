@@ -41,6 +41,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+                    <!--  Nav bar User will see logged in  -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
@@ -54,6 +55,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'create_post' %}">Post</a>
                     </li>
+                    <!--  Navbar user will see if not logged in  -->
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -105,7 +107,7 @@
             <i class="fab fa-youtube-square ms-3"></i>
         </p>
     </footer>
-
+    <!--  Script for pop up fading out  -->
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
@@ -113,6 +115,7 @@
             alert.close();
         }, 2500);
     </script>
+    <!--  Fontawesome  -->
     <script src="https://kit.fontawesome.com/66b241833b.js" crossorigin="anonymous"></script>
 </body>
 
